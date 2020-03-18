@@ -32,7 +32,7 @@ function modelReady(){
 
 createP("prediction complete");
     createP(results[0].label);
-createP((results[0].confidence)* 100 + "%");
+createP((results[0].confidence)* 100);
       let label = results[0];
       fill(0);
       textSize(64);
