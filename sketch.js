@@ -12,9 +12,12 @@ function handleFile(file) {
   if (file.type === 'image') {
     img = createImg(file.data, '');
     img.hide();
+mobilenet = ml5.imageClassifier("MobileNet", modelReady);
+
   } else {
     img = null;
   }
+
 }
 function modelReady(){
 
@@ -37,24 +40,17 @@ createP(results[0].confidence);
   });
 }
 
-function imageReady() {
-  image(diode, 0, 0, width, height);
-  console.log("Image loaded");
-}
 
 function setup() {
   createCanvas(640, 480);
   background(0);
-input = createFileInput(handleFile);
+  input = createFileInput(handleFile);
   input.position(0, 0);
-
-  diode.hide();
-
-  mobilenet = ml5.imageClassifier("MobileNet", modelReady);
+  
 }
 
 function draw() {
 if (img) {
-    image(img, 0, 0, 400 , 400);
+    image(img, 0, 0, width , height);
   }
 }
