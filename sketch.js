@@ -11,12 +11,11 @@ function modelReady() {
     }
     if (results) {
       console.log(results);
-    
-
-      let label = results[0].className;
+    createP(results);
+      let label = results[0];
       fill(0);
       textSize(64);
-      createP(label);
+      text(results);
     }
   });
 }
