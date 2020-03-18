@@ -11,7 +11,6 @@ function handleFile(file) {
   print(file);
   if (file.type === 'image') {
     img = createImg(file.data, '');
-    img.hide();
 mobilenet = ml5.imageClassifier("MobileNet", modelReady);
 
   } else {
@@ -54,5 +53,7 @@ img.hide();
 function draw() {
 if (img) {
     image(img, 0, 0, width , height);
+Img.show()
+
   }
 }
