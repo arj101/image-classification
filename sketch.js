@@ -11,10 +11,12 @@ function handleFile(file) {
   print(file);
   if (file.type === 'image') {
     img = createImg(file.data, '');
+
 mobilenet = ml5.imageClassifier("MobileNet", modelReady);
 
   } else {
     img = null;
+img.hide();
   }
 
 }
@@ -46,14 +48,13 @@ function setup() {
   background(0);
   input = createFileInput(handleFile);
   input.position(0, 0);
-img.hide();
   
 }
 
 function draw() {
 if (img) {
     image(img, 0, 0, width , height);
-Img.show()
+
 
   }
 }
