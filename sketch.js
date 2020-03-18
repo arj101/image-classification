@@ -11,11 +11,12 @@ function modelReady() {
     }
     if (results) {
       console.log(results);
-    createP(results);
+createP("prediction complete");
+    createP(results[0].modelName);
       let label = results[0];
       fill(0);
       textSize(64);
-      text(results);
+      
     }
   });
 }
