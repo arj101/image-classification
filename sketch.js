@@ -29,9 +29,10 @@ function modelReady(){
     }
     if (results) {
       console.log(results);
+
 createP("prediction complete");
     createP(results[0].label);
-createP(results[0].confidence);
+createP((results[0].confidence)* 100);
       let label = results[0];
       fill(0);
       textSize(64);
