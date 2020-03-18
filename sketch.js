@@ -43,10 +43,11 @@ createP((results[0].confidence)* 100);
 
 
 function setup() {
-  createCanvas(640, 480);
+  createCanvas(800, 600);
   background(0);
   input = createFileInput(handleFile);
   input.position(0, 0);
+img.hide();
   
 }
 
