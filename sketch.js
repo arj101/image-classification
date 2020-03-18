@@ -12,7 +12,7 @@ function modelReady() {
     if (results) {
       console.log(results);
 createP("prediction complete");
-    createP(results[0].modelName);
+    createP(results[0].label);
       let label = results[0];
       fill(0);
       textSize(64);
