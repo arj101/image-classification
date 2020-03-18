@@ -2,9 +2,24 @@ let mobilenet;
 
 let diode;
 
-function modelReady() {
+let input;
+let img;
+
+
+
+function handleFile(file) {
+  print(file);
+  if (file.type === 'image') {
+    img = createImg(file.data, '');
+    img.hide();
+  } else {
+    img = null;
+  }
+}
+function modelReady(){
+
   console.log("Model is Ready!!!!!");
-  mobilenet.predict(diode, (error, results) => {
+  mobilenet.predict(img, (error, results) => {
     if (error){
       createP(error);
       console.error(error);
@@ -30,10 +45,16 @@ function imageReady() {
 function setup() {
   createCanvas(640, 480);
   background(0);
-  diode = createImg("images/airplane.jpg", imageReady);
+input = createFileInput(handleFile);
+  input.position(0, 0);
+
   diode.hide();
 
   mobilenet = ml5.imageClassifier("MobileNet", modelReady);
 }
 
-function draw() {}
+function draw() {
+if (img) {
+    image(img, 0, 0, 400 , 400);
+  }
+}
