@@ -29,9 +29,12 @@ function modelReady(){
     }
     if (results) {
       console.log(results);
-    createP("prediction: " + results[0].label);
-createP("confidence: " nf(results[0].confidence) + "%");
-
+createP("prediction complete");
+    createP(results[0].label);
+createP(results[0].confidence);
+      let label = results[0];
+      fill(0);
+      textSize(64);
       
     }
   });
