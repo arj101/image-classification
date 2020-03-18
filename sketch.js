@@ -15,7 +15,7 @@ function modelReady() {
       let label = results[0].className;
       fill(0);
       textSize(64);
-      text(label,10,height  - 50);
+      createP(label);
     }
   });
 }
