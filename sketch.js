@@ -1,11 +1,6 @@
 let mobilenet;
-
 let diode;
-
-let input;
 let img;
-
-
 
 function handleFile(file) {
   print(file);
@@ -16,7 +11,7 @@ mobilenet = ml5.imageClassifier("MobileNet", modelReady);
 
   } else {
     img = null;
-img.hide();
+
   }
 
 }
@@ -37,24 +32,23 @@ createP((results[0].confidence)* 100);
       let label = results[0];
       fill(0);
       textSize(64);
-      
+
     }
   });
 }
-
+function preload(){
+    image = loadImage("./images/airplane.jpg",handleFile);
+}
 
 function setup() {
-  createCanvas(800, 600);
+  noCanvas();
   background(0);
-  input = createFileInput(handleFile);
-  input.position(0, 0);
-  
+
 }
 
 function draw() {
 if (img) {
     image(img, 0, 0, width , height);
-
 
   }
 }
